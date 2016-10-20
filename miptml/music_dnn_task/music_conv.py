@@ -22,7 +22,9 @@ from utils import train_net
 from lasagne import layers
 from lasagne import nonlinearities
 from lasagne import init
+from lasagne.regularization import regularize_layer_params, regularize_layer_params_weighted, l2, l1
 import datetime
+from collections import Counter
 
 
 BP = "./musicdata/"
@@ -75,16 +77,21 @@ nn['pool4'] = layers.MaxPool1DLayer(nn['conv4'], pool_size=2, stride=1)
 
 nn['globalpooling'] = layers.GlobalPoolLayer(nn['pool4'])
 
-
+nn
 
 nn['fc1'] = layers.DenseLayer(nn['globalpooling'], num_units=2048,
                               nonlinearity=nonlinearities.rectify,
-                             W = init.GlorotUniform())
-nn['fc2'] = layers.DenseLayer(nn['fc1'], num_units=2048, 
-                              nonlinearity=nonlinearities.rectify,
-                             W = init.GlorotUniform())
+                             W = init.Orthogonal('relu'))
 
-nn['output'] = layers.DenseLayer(nn['fc2'], num_units=num_classes,                                 
+nn['dropout1'] = layers.DropoutLayer(nn['fc1'], p = 0.5)
+
+nn['fc2'] = layers.DenseLayer(nn['dropout1'], num_units=2048, 
+                              nonlinearity=nonlinearities.rectify,
+                             W = init.Orthogonal('relu'))
+
+nn['droupout2'] = layers.DropoutLayer(nn['fc2'], p = 0.5)
+
+nn['output'] = layers.DenseLayer(nn['dropout2'], num_units=num_classes,                                 
                                  nonlinearity=nonlinearities.softmax)
 
 network = nn['output']
@@ -93,8 +100,10 @@ y_predicted = lasagne.layers.get_output(network)
 all_weights = lasagne.layers.get_all_params(network)
 
 loss = lasagne.objectives.categorical_crossentropy(y_predicted, target_y).mean()
+l2_penalty = regularize_layer_params(y_predicted, l2)
+loss += l2_penalty
 accuracy = lasagne.objectives.categorical_accuracy(y_predicted, target_y).mean()
-updates_sgd = lasagne.updates.adam(loss, all_weights)
+updates_sgd = lasagne.updates.nesterov_momentum(loss, all_weights, learning_rate=0.01, momentum=0.9)
 
 train_fun = theano.function([input_X, target_y], [loss, accuracy], allow_input_downcast=True, updates=updates_sgd)
 test_fun  = theano.function([input_X, target_y], [loss, accuracy], allow_input_downcast=True)
