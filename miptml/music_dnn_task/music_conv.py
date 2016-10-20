@@ -89,7 +89,7 @@ nn['fc2'] = layers.DenseLayer(nn['dropout1'], num_units=2048,
                               nonlinearity=nonlinearities.rectify,
                              W = init.Orthogonal('relu'))
 
-nn['droupout2'] = layers.DropoutLayer(nn['fc2'], p = 0.5)
+nn['dropout2'] = layers.DropoutLayer(nn['fc2'], p = 0.5)
 
 nn['output'] = layers.DenseLayer(nn['dropout2'], num_units=num_classes,                                 
                                  nonlinearity=nonlinearities.softmax)
@@ -100,8 +100,9 @@ y_predicted = lasagne.layers.get_output(network)
 all_weights = lasagne.layers.get_all_params(network)
 
 loss = lasagne.objectives.categorical_crossentropy(y_predicted, target_y).mean()
-l2_penalty = regularize_layer_params(y_predicted, l2)
-loss += l2_penalty
+l2_penalty_1 = regularize_layer_params(nn['fc1'], l2)
+l2_penalty_2 = regularize_layer_params(nn['fc2'], l2)
+loss += l2_penalty_1 + l2_penalty_2
 accuracy = lasagne.objectives.categorical_accuracy(y_predicted, target_y).mean()
 updates_sgd = lasagne.updates.nesterov_momentum(loss, all_weights, learning_rate=0.01, momentum=0.9)
 
