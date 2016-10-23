@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/dbcontroller/dbcontroller.iml" filepath="$PROJECT_DIR$/dbcontroller/dbcontroller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/utils/dbtools.iml" filepath="$PROJECT_DIR$/utils/dbtools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fixingmummies.iml" filepath="$PROJECT_DIR$/fixingmummies.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pres/presentation.iml" filepath="$PROJECT_DIR$/pres/presentation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shell/shell.iml" filepath="$PROJECT_DIR$/shell/shell.iml" />
+      <module fileurl="file://$PROJECT_DIR$/structured/structured[-api].iml" filepath="$PROJECT_DIR$/structured/structured[-api].iml" />
+      <module fileurl="file://$PROJECT_DIR$/table-api/table-api.iml" filepath="$PROJECT_DIR$/table-api/table-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/table-impl/table-impl.iml" filepath="$PROJECT_DIR$/table-impl/table-impl.iml" />
+    </modules>
+  </component>
+</project>
+

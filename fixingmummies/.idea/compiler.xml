@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="Javac" />
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="dbcontroller" />
+        <module name="dbtools" />
+        <module name="pres" />
+        <module name="presentation" />
+        <module name="shell" />
+        <module name="structured" />
+        <module name="structured[-api]" />
+        <module name="table-api" />
+        <module name="table-impl" />
+        <module name="utils" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dbcontroller" target="1.8" />
+      <module name="dbtools" target="1.8" />
+      <module name="fixingmummies" target="1.8" />
+      <module name="pres" target="1.8" />
+      <module name="presentation" target="1.8" />
+      <module name="shell" target="1.8" />
+      <module name="structured" target="1.8" />
+      <module name="structured[-api]" target="1.8" />
+      <module name="table-api" target="1.8" />
+      <module name="table-impl" target="1.8" />
+      <module name="utils" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
+
