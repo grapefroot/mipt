@@ -1,0 +1,225 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language russian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Литобзор
+\end_layout
+
+\begin_layout Abstract
+Испокон веков люди хотели знать будщее.
+ Некоторые по религиозным соображениям, некоторые с корыстными целями, а
+ некоторые просто так.
+ Развитие статистических методов во второй половине
+\begin_inset Formula $XX$
+\end_inset
+
+ века и развитие вычислительной техники начала 
+\begin_inset Formula $XXI$
+\end_inset
+
+ века позволили использовать все более сложные статистические модели, которые
+ смогли показать очень высокие результаты.
+ В данной работе будут рассмотрены несколько моделей нацеленных на предсказание
+ значений акций компаний на бирже.
+\end_layout
+
+\begin_layout Part
+Формулировка проблемы
+\end_layout
+
+\begin_layout Standard
+Решение проблемы прогнозирования поведения акций компаний является востребованно
+й проблемой, так как с помощью купли-продажи акций в нужные моменты времени
+ может быть получен значительный доход.
+ Сама задача прогнозирования может быть сформулирована либо как задача регрессии
+(то есть предсказания вещественной переменной в один или несколько моментов
+ времени например: цена акций в конце дня), либо как задача классификации(
+ то есть задача отнесения к одному из нескольких классов например: уменьшение
+ или повышение стоимости акций.
+ Среди профессиональных трейдеров существует так называемая гипотеза эффективног
+о рынка [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "гипотеза эффективного рынка"
+
+\end_inset
+
+], утверждающая что в любой момент времени значения стоимостей акций полностью
+ отражают всю имеющуюся информацию, то есть что нельзя лучше чем случайно
+ предсказать значение в будущие моменты времени.
+ Вопреки этому утверждению, выходят все новые статьи, утверждающие возможность
+ предсказания с помощью современных статистических методов.
+ Здесь рассматриваются методы предсказания с помощью обработки текстовой
+ информации.
+\end_layout
+
+\begin_layout Part
+Возможные подходы к решению проблемы
+\end_layout
+
+\begin_layout Standard
+Разделяют несколько подходов к прогнозированию поведения цен акций.
+ Один рассматривает значения цен как временной ряд и использует различные
+ существующие инструменты для моделирования временных рядов.
+ Это назвывается technical analysis.
+ Другой использует такую дополнительную информацию как, например, многочисленные
+ финансовые обзоры и статьи или просто комментарии из социальных сетей или
+ блогов.
+ Это называется fundamental analysis.
+ И тут уже применяюется очень много различных методов: начиная от эврестических
+ и заканчивая сложными рекуррентными сетями с миллионами настраевымых параметров.
+\end_layout
+
+\begin_layout Part
+Подходы, использованные в рассмотренных статьях
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "гипотеза эффективного рынка"
+
+\end_inset
+
+https://en.wikipedia.org/wiki/Efficient-market_hypothesis
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+http://michael.hahsler.net/research/misc/ICCTS_2012_NewsSentimentAnalysis.pdf
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-3"
+
+\end_inset
+
+http://uir.ulster.ac.uk/33264/1/File07376681.pdf
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-4"
+
+\end_inset
+
+https://arxiv.org/pdf/1607.01958.pdf
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-5"
+
+\end_inset
+
+http://airccse.org/journal/ijsc/papers/3211ijsc03.pdf
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-6"
+
+\end_inset
+
+http://www.icwsm.org/papers/3--Godbole-Srinivasaiah-Skiena.pdf
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-7"
+
+\end_inset
+
+https://www.aaai.org/ocs/index.php/ICWSM/ICWSM10/paper/viewFile/1529/1904
+\end_layout
+
+\end_body
+\end_document
